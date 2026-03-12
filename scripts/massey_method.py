@@ -86,16 +86,5 @@ def massey_method(df, min_games=1):
 
 
 # Compute ratings and schedule strength
-Mratings, Msos, Mteams = massey_method(df_men)
-Wratings, Wsos, Wteams = massey_method(df_women)
-Mteams.sort(key=lambda x: Mratings[x], reverse=True)
-Wteams.sort(key=lambda x: Wratings[x], reverse=True)
-
-# Display results sorted by rating (highest first)
-print("Massey Method Ratings and Schedule of Strength")
-print(f"{'Team ID':<10} {'Rating':<15} {'Schedule Strength':<15}")
-
-for team in Mteams[:5]:
-    rating = Mratings[team]
-    strength = Msos[team]
-    print(f"{team:<10} {rating:<15.4f} {strength:<15.4f}")
+if __name__ == "__main__":
+    print("Massey method module loaded. Run this script directly to test.")
